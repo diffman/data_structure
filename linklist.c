@@ -208,7 +208,7 @@ int linklist_test()
     linklist_traverse(m_linklist);
 
     printf("\n\nDelete:\r\n");
-    if(linklist_delete(m_linklist, 7, &item))
+    if(!linklist_delete(m_linklist, 7, &item))
     {
         printf("\n error! \n");
         return 0;
