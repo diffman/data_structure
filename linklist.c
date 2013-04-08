@@ -2,10 +2,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-//LinkList with head point
+//LinkList with head Node (or LinkList without head Node?)
 int linklist_init(LinkList *h)
 {
-    *h = (LinkList)malloc(sizeof(LNode));
+    *h = (LinkList)malloc(sizeof(LNode)); //create head Node .
     if(!h)
     {
         printf("Init Linklist error!\r\n");
@@ -62,6 +62,7 @@ int linklist_insert(LinkList h, int pos, DataType x)
         printf("unable to create new Node\r\n");
         return 0;
     }
+    q->data = x;
     q->next = p->next;
     p->next = q;
 
@@ -74,7 +75,7 @@ int linklist_delete(LinkList h, int pos, DataType *item)
     PNode p = h;
     PNode q;
     int i = 0;
-    while(p->next && i > pos - 1)
+    while(p->next && i < pos - 1)
     {
         p = p -> next;
         i ++;
@@ -164,6 +165,67 @@ void linklist_traverse(LinkList h)
 
     printf("\n");
 }
+
+//void linklist_reverse(LinkList *h)
+//{
+//    PNode p = *h, q = NULL, r;
+
+    //reverse every node.
+
+//}
+
+int linklist_test()
+{
+    int data[7] = {1, 1, 2, 3, 5, 7, 8};
+    int i, length;
+    LinkList m_linklist = NULL;
+    DataType item;
+
+    printf("Setup Linklist!\r\n");
+    linklist_init(&m_linklist);
+    for(i = 0; i < 7; i++)
+    {
+        if(!linklist_insert(m_linklist, i + 1, data[i]))
+        {
+            printf("\n error! \n");
+            return 0;
+        }
+    }
+
+    printf("\n\nTraverse:\r\n");
+    linklist_traverse(m_linklist);
+
+    printf("\n\nLength:\r\n");
+    length = linklist_length(m_linklist);
+    printf("\t%d", length);
+
+    printf("\n\nInsert\"4 \":\r\n");
+    if(!linklist_insert(m_linklist, 5, 4))
+    {
+        printf("\n error! \n");
+        return 0;
+    }
+    linklist_traverse(m_linklist);
+
+    printf("\n\nDelete:\r\n");
+    if(linklist_delete(m_linklist, 7, &item))
+    {
+        printf("\n error! \n");
+        return 0;
+    }
+    linklist_traverse(m_linklist);
+    printf("%d\r\n", item);
+
+    linklist_destroy(m_linklist);
+
+
+
+}
+
+
+
+
+
 
 
 

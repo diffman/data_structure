@@ -1,9 +1,4 @@
-typedef int DataType;
-
-typedef struct Node{
-    DataType data;
-    struct Node *next;
-}LNode, *PNode, *LinkList;
+#include "datatype.h"
 
 int linklist_init(LinkList *h);
 
@@ -22,4 +17,8 @@ int linklist_get_elem(LinkList h, int pos, DataType *item);
 void linklist_destroy(LinkList h);
 
 void linklist_traverse(LinkList h);
+
+void linklist_reverse(LinkList *h);
+
+int linklist_test();
 

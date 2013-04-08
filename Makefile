@@ -6,7 +6,7 @@ CC = gcc
 CFLAGS = -g
 
 #objects
-OBJS = data_structure.o seqlist.o
+OBJS = data_structure.o seqlist.o linklist.o
 
 INSTALL_PATH = ./
 
@@ -15,10 +15,13 @@ all: data_structure
 data_structure: $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $@
 
-data_structure.o: data_structure.c seqlist.h
+data_structure.o: data_structure.c seqlist.h datatype.h
 	$(CC) $(CFLAGS) -c -o $@ $<
 
-seqlist.o: seqlist.c seqlist.h
+seqlist.o: seqlist.c seqlist.h datatype.h
+	$(CC) $(CFLAGS) -c -o $@ $<
+
+linklist.o: linklist.c linklist.h
 	$(CC) $(CFLAGS) -c -o $@ $<
 
 clean:
