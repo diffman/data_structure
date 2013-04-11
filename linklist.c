@@ -181,6 +181,9 @@ int linklist_test()
     LinkList m_linklist = NULL;
     DataType item;
 
+    printf("*******************************\r\n");
+    printf("Link List\r\n");
+    printf("*******************************\r\n");
     printf("Setup Linklist!\r\n");
     linklist_init(&m_linklist);
     for(i = 0; i < 7; i++)
@@ -217,6 +220,8 @@ int linklist_test()
     printf("%d\r\n", item);
 
     linklist_destroy(m_linklist);
+
+    return 1;
 
 
 

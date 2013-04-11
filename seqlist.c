@@ -122,6 +122,10 @@ int seqlist_test()
     int data[7] = {0, 1, 1, 2, 3, 5, 8};
     DataType item;
 
+    printf("*******************************\r\n");
+    printf("Sequence List\r\n");
+    printf("*******************************\r\n");
+
     printf("\n\n Setup Sequence List\n\n");
     list_init(&my_seqlist);
     for (i = 0; i < 7; i++)

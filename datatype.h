@@ -37,4 +37,22 @@ typedef struct SNode{
     struct SNode *next;
 }SNode, *LinkStack;
 
+//seqqueue
+#define QUEUESIZE 100
+
+typedef struct{
+    DataType items[QUEUESIZE];
+    int front, rear;
+}seqqueue;
+
+//linkqueue
+typedef struct QNode{
+    DataType data;
+    struct QNode *next;
+}LQNode, *PQNode;
+
+typedef struct{
+    PQNode front, rear;
+}LinkQueue;
+
 #endif
