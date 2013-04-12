@@ -55,4 +55,24 @@ typedef struct{
     PQNode front, rear;
 }LinkQueue;
 
+typedef char BTDataType;
+//linkBintree
+typedef struct BTNode{
+    BTDataType data;
+    struct BTNode *left;
+    struct BTNode *right;
+}BTNode, *PBTNode, *BiTreeLink;
+
+//link BThrtree
+typedef struct TBNode{
+    BTDataType data;
+    int lthread,rthread;
+    struct TBNode *left, *right;
+}TBNode, *PTBNode, *TBLink;
+
 #endif
+
+
+
+
+

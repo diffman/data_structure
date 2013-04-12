@@ -5,6 +5,7 @@
 #include "linkstack.h"
 #include "seqqueue.h"
 #include "linkqueue.h"
+#include "linkbintree.h"
 
 int main(int argc ,char *argv[])
 {
@@ -19,6 +20,8 @@ int main(int argc ,char *argv[])
     seqqueue_test();
     //linkqueue
     linkqueue_test();
+    //linkbintree
+    linkbintree_test();
     return res;
 
 }
