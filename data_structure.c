@@ -6,6 +6,7 @@
 #include "seqqueue.h"
 #include "linkqueue.h"
 #include "linkbintree.h"
+#include "bstree.h"
 
 int main(int argc ,char *argv[])
 {
@@ -22,6 +23,9 @@ int main(int argc ,char *argv[])
     linkqueue_test();
     //linkbintree
     linkbintree_test();
+    //bstree
+
+    BST_test();
     return res;
 
 }

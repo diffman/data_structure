@@ -70,7 +70,20 @@ typedef struct TBNode{
     struct TBNode *left, *right;
 }TBNode, *PTBNode, *TBLink;
 
+//BSTree 二叉排序树
+typedef int KeyType;
+typedef struct{
+    KeyType key;
+}BSTDataType;
+
+typedef struct BSTNode{
+    BSTDataType data;
+    struct BSTNode *left, *right;
+}BSTNode, *BSTree;
+
 #endif
+
+
 
 
 
