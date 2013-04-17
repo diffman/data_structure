@@ -6,7 +6,7 @@ CC = gcc
 CFLAGS = -g
 
 #objects
-OBJS = data_structure.o seqlist.o linklist.o seqstack.o linkstack.o seqqueue.o linkqueue.o linkbintree.o bstree.o
+OBJS = data_structure.o seqlist.o linklist.o seqstack.o linkstack.o seqqueue.o linkqueue.o linkbintree.o bstree.o hashtable.o
 
 INSTALL_PATH = ./
 
@@ -15,7 +15,7 @@ all: data_structure
 data_structure: $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $@
 
-data_structure.o: data_structure.c seqlist.h datatype.h seqstack.h linkstack.h seqqueue.h linkqueue.h linkbintree.c linkbintree.h bstree.h
+data_structure.o: data_structure.c seqlist.h datatype.h seqstack.h linkstack.h seqqueue.h linkqueue.h linkbintree.c linkbintree.h bstree.h hashtable.h
 	$(CC) $(CFLAGS) -c -o $@ $<
 
 seqlist.o: seqlist.c seqlist.h datatype.h
@@ -39,6 +39,8 @@ linkqueue.o: linkqueue.c linkqueue.h datatype.h
 linkbintree.o: linkbintree.c linkbintree.h datatype.h
 	$(CC) $(CFLAGS) -c -o $@ $<
 bstree.o: bstree.c bstree.h datatype.h
+	$(CC) $(CFLAGS) -c -o $@ $<
+hashtable.o: hashtable.c hashtable.h datatype.h
 	$(CC) $(CFLAGS) -c -o $@ $<
 clean:
 	-rm -f *.o *.ko .*.cmd .*.flags *.mod.c data_structure

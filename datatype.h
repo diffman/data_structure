@@ -81,6 +81,19 @@ typedef struct BSTNode{
     struct BSTNode *left, *right;
 }BSTNode, *BSTree;
 
+//Hash Table
+#define HASHSIZE 13
+#define DELFLAG -1
+
+typedef struct{
+    int key;
+}HASHDataType;
+
+typedef struct{
+    HASHDataType data;      //data
+    int times;              //compare times
+}HashTable[HASHSIZE];
+
 #endif
 
 

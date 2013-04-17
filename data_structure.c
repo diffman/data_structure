@@ -7,6 +7,7 @@
 #include "linkqueue.h"
 #include "linkbintree.h"
 #include "bstree.h"
+#include "hashtable.h"
 
 int main(int argc ,char *argv[])
 {
@@ -24,8 +25,10 @@ int main(int argc ,char *argv[])
     //linkbintree
     linkbintree_test();
     //bstree
-
     BST_test();
+    //hashtable
+    Hash_test();
+
     return res;
 
 }
